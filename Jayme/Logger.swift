@@ -35,14 +35,14 @@ open class Logger {
     // MARK: - Private
     
     internal var requestCounter = 0
-    internal func log(_ items: Any..., _ separator: String = " ", _ terminator: String = "\n") {
+    internal func log(_ items: Any..., separator sep: String = " ", terminator term: String = "\n") {
         
         if self.enableLogs {
             guard let loggingFunction = self.loggingFunction else {
-                print(items, separator: separator, terminator: terminator)
+                print(items, separator: sep, terminator: term)
                 return
             }
-            loggingFunction(items, separator, terminator)
+            loggingFunction(items, sep, term)
         }
     }
     
